@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Meta Configuration -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sayandeep Dey's Portfolio</title>
+
+  <!-- Bootstrap CSS for layout and responsive components -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Animate.css for predefined animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- AOS for scroll-based animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- AOS Animation -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+  <!-- Custom CSS styling -->
+  <style>
+    /* Body background and font */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+      background: linear-gradient(135deg, #FFB6C1, #ADD8E6, #FF6347);
+      color: #333;
+    }
+  
+    /* Header styling */
+    header {
+        background: linear-gradient(135deg, #001f3f, #003366, #004080); /* Royal Navy Blue shades */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        padding: 20px 80px;
+      }
+      
+  
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    }
+  
+    /* Floating menu button */
+    .menu-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+  
+    /* Dropdown menu styling */
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        bottom: 60px;
+        right: 0;
+        background: linear-gradient(180deg, #d61757, #52d3ce); /* New gradient */
+        padding: 10px 20px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        flex-direction: column;
+    }
+      
+  
+    .dropdown-menu a {
+      color: #fff;
+      display: block;
+      padding: 10px 0;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+  
+    .dropdown-menu a:hover {
+      color: #ffeb3b;
+    }
+    .dropdown-toggle {
+        background: linear-gradient(135deg, #FF416C, #FF4B2B); /* New gradient color */
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        font-size: 18px;
+        border-radius: 30px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.3s ease;
+      }
+      
+      .dropdown-toggle:hover {
+        background: #ff1a4f; /* Optional: darker shade on hover */
+      }
+      
+  
+    .show-menu {
+      display: block;
+    }
+
+    /* Section titles with gradient underline */
+    h2.section-title {
+      position: relative;
+      display: inline-block;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  
+    .section-title::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, #007BFF, #00c6ff);
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    /* Lists for skills, projects, experience */
+    .skills-list, .projects-list, .experience-list {
+      list-style: none;
+      padding-left: 0;
+    }
+  
+    .skills-list li::before, .projects-list li::before, .experience-list li::before {
+      content: '\25A0';
+      color: #007BFF;
+      margin-right: 8px;
+    }
+  
+    .skills-list li, .projects-list li, .experience-list li {
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+  
+    /* Card hover effect */
+    .card-hover {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border-radius: 12px;
+      background: #fff;
+      border: none;
+    }
+  
+    .card-hover:hover {
+      transform: scale(1.04);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+  
+    /* Light Section Background */
+    .bg-light {
+      background: linear-gradient(to right, #eef2f3, #ffffff);
+    }
+  
+    /* Alternate Gradient Section Background */
+    .bg-alt {
+      background: linear-gradient(to right, #f8d7da, #f5c6cb);
+    }
+  
+    /* Anchor tag colors */
+    a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+  
+    a:hover {
+      text-decoration: underline;
+    }
+  
+    /* Footer styling */
+    footer {
+      background: #111;
+      color: #aaa;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+  
+    .section-separator {
+      border-bottom: 2px solid #007BFF;
+      margin: 40px 0;
+    }
+  
+    /* KIIT logo hover effect */
+    .kiit-logo {
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      padding: 1px;
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .kiit-logo:hover {
+      transform: scale(1.05);
+    }
+  
+    /* Floating app icons near top */
+    .floating-icons {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 1001;
+      pointer-events: none;
+    }
+  
+    .floating-icons img {
+      width: 35px;
+      height: 35px;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.2));
+      border-radius: 50%;
+      background: white;
+      padding: 5px;
+    }
+  
+    .floating-icons img:hover {
+      transform: scale(1.3);
+    }
+  
+    /* Accordion custom styles */
+    .custom-accordion .accordion-button {
+      transition: background-color 0.3s ease;
+      font-size: 1.1rem;
+      border-radius: 0.5rem;
+    }
+  
+    .custom-accordion .accordion-button:not(.collapsed) {
+      background: linear-gradient(to right, #0d6efd, #6f42c1);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  
+    .custom-accordion .accordion-body li {
+      padding: 6px 0;
+      font-size: 1rem;
+      transition: transform 0.2s;
+    }
+  
+    .custom-accordion .accordion-body li:hover {
+      transform: translateX(5px);
+      color: #0d6efd;
+    }
+  
+    /* Applying gradient for alternate sections */
+    .section-alt:nth-child(odd) {
+      background: linear-gradient(135deg, #FFB6C1, #FF6347);
+    }
+  
+    .section-alt:nth-child(even) {
+      background: linear-gradient(135deg, #ADD8E6, #00C6FF);
+    }
+    .custom-accordion .accordion-button {
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+        color: white;
+        font-weight: bold;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+      
+      .custom-accordion .accordion-button:hover {
+        transform: scale(1.02);
+        background: linear-gradient(to right, #2575fc, #6a11cb);
+      }
+      
+      .custom-accordion .accordion-button:not(.collapsed) {
+        background: linear-gradient(to right, #1d2b64, #f8cdda);
+        color: #fff;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+      
+      .custom-accordion .accordion-body {
+        background: #ffffff;
+        border-radius: 0 0 10px 10px;
+        padding: 20px;
+        text-align: left;
+      }
+      
+  </style>
+  
+  
+
+  <!-- Script to close dropdown if clicked outside -->
+  <script>
+    window.addEventListener('click', function(e) {
+      const menu = document.getElementById('dropdown');
+      const button = document.querySelector('.dropdown-toggle');
+      if (!button.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('show-menu');
+      }
+    });
+  </script>
+</head>
+
+<body>
+
+  <!-- Floating Menu Button and Dropdown -->
+  <div class="menu-container">
+    <button class="dropdown-toggle" onclick="document.getElementById('dropdown').classList.toggle('show-menu')">☰</button>
+    <div id="dropdown" class="dropdown-menu">
+      <a href="#about">About Me</a>
+        <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- Header Section -->
+  <header class="text-white py-5">
+    <!-- Floating tech icons -->
+    <div class="floating-icons d-flex flex-wrap gap-3 justify-content-center my-4">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" title="GitHub">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" title="LinkedIn">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/javascript.svg" alt="JavaScript" title="JavaScript">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/react.svg" alt="React" title="React">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/bootstrap.svg" alt="Bootstrap" title="Bootstrap">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/figma.svg" alt="Figma" title="Figma">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/canva.svg" alt="Canva" title="Canva">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/express.svg" alt="Express.js" title="Express.js">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/postman.svg" alt="Postman" title="Postman">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/adobe.svg" alt="Adobe" title="Adobe">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/springboot.svg" alt="Spring Boot" title="Spring Boot">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mongodb.svg" alt="MongoDB" title="MongoDB">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mysql.svg" alt="MySQL" title="MySQL">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/visualstudiocode.svg" alt="VS Code" title="VS Code">
+      </div>
+      
+
+    <!-- Header main content -->
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="text-center text-md-start">
+        <img src="image/pp.jpg" alt="Sayandeep Dey" class="rounded-circle shadow" width="180">
+      </div>
+      
+      <div class="text-center text-md-start">
+        <h1 class="animate__animated animate__fadeInDown">Sayandeep Dey</h1>
+        <p class="lead animate__animated animate__fadeInUp">Full Stack Developer | Data Analyst | AI Enthusiast</p>
+      </div>
+      <div class="text-center text-md-end">
+        <img src="image/images.png" alt="KIIT Institute Logo" class="kiit-logo shadow" width="150">
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="p-5 bg-light text-center">
+    <div class="container" data-aos="fade-up" data-aos-duration="1000">
+      <h2 class="section-title mb-4">
+        <i class="fas fa-user-circle me-2"></i>About Me
+      </h2>
+      <div class="row align-items-center">
+        <!-- Profile Image Placeholder -->
+        <div class="col-md-4 mb-4 mb-md-0" data-aos="zoom-in" data-aos-duration="1200">
+          <img src="C:\Users\KIIT\OneDrive\Desktop\Portfolio\—Pngtree—user about me_16023014.png" 
+               class="img-fluid rounded-circle shadow" alt="Profile Photo">
+        </div>
+  
+        <!-- Text Content -->
+        <div class="col-md-8 text-start" data-aos="fade-left" data-aos-duration="1200">
+          <p class="lead">
+            <i class="fas fa-rocket text-primary"></i> Hi! I'm <strong>Sayandeep Dey</strong>, a tech explorer and CSE undergrad at <strong>KIIT University</strong>.
+          </p>
+          <p>
+            <i class="fas fa-code text-success"></i> Passionate about solving real-world problems with clean and scalable code.
+            I blend curiosity with precision, turning caffeine and creativity into purposeful software.
+          </p>
+          <p>
+            <i class="fas fa-laptop-code text-warning"></i> I'm always experimenting — from building dynamic web apps to exploring AI, cybersecurity, and cloud computing.
+          </p>
+          <p>
+            <i class="fas fa-lightbulb text-danger"></i> Outside coding, you’ll find me at hackathons, contributing to open-source, or enhancing my UI/UX skills.
+          </p>
+          <p>
+            <i class="fas fa-compass text-info"></i> Always evolving. Always learning. Ready to make a mark in the tech world with vision, discipline, and creativity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Include these in <head> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  
+  <!-- Optional CSS Tweaks -->
+  <style>
+    .section-title {
+      color: #2c2c2c; /* Greyish black */
+    }
+  
+    .section-title i,
+    .about-icon {
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+  
+    img.rounded-circle {
+      border: 5px solid #007bff;
+    }
+  </style>
+  
+  
+  
+
+  
+<!-- Education Section -->
+<section id="education" class="py-5 text-white">
+    <div class="container text-center" data-aos="zoom-in-up">
+      <h2 class="section-title mb-5">🎓 My Educational Journey</h2>
+      <div class="row justify-content-center g-4">
+        
+        <!-- 10th Grade -->
+        <div class="col-md-4">
+          <div class="edu-card" onclick="this.classList.toggle('flipped')">
+            <div class="edu-inner">
+              <div class="edu-front">
+                <img src="C:\Users\KIIT\OneDrive\Desktop\Portfolio\BookIcon.png" alt="10th" class="edu-icon">
+                <h5 class="mt-3">10th Grade</h5>
+              </div>
+              <div class="edu-back">
+                <h6>Taldangra Fulmati High School</h6>
+                <p><strong>Board:</strong> WBBSE</p>
+                <p><strong>Year:</strong> 2019</p>
+                <p><strong>Marks:</strong> 88.28%</p>
+                <p>📍 Taldangra, Bankura, West Bengal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- 12th Grade -->
+        <div class="col-md-4">
+          <div class="edu-card" onclick="this.classList.toggle('flipped')">
+            <div class="edu-inner">
+              <div class="edu-front">
+                <img src="C:\Users\KIIT\OneDrive\Desktop\Portfolio\BookIcon.png" alt="12th" class="edu-icon">
+                <h5 class="mt-3">12th Grade</h5>
+              </div>
+              <div class="edu-back">
+                <h6>Taldangra Fulmati High School</h6>
+                <p><strong>Board:</strong> WBCHSE</p>
+                <p><strong>Year:</strong> 2021</p>
+                <p><strong>Marks:</strong> 88%</p>
+                <p>📍 Taldangra, Bankura, West Bengal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- B.Tech -->
+        <div class="col-md-4">
+          <div class="edu-card" onclick="this.classList.toggle('flipped')">
+            <div class="edu-inner">
+              <div class="edu-front">
+                <img src="C:\Users\KIIT\OneDrive\Desktop\Portfolio\BookIcon.png" alt="B.Tech" class="edu-icon">
+                <h5 class="mt-3">B.Tech (CSE)</h5>
+              </div>
+              <div class="edu-back">
+                <h6>Kalinga Institute of Industrial Technology (KIIT) University</h6>
+                <p><strong>Department:</strong> Computer Science and engineering</p>
+                <p><strong>Semester:</strong> 6th</p>
+                <p><strong>Status:</strong> Pursuing</p>
+                <p>📍 Bhubaneswar, Odisha</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  
+<style>
+    .edu-card {
+        background: transparent;
+        perspective: 1200px;
+        border-radius: 25px;
+        cursor: pointer;
+        height: 270px;
+        transition: transform 0.5s ease-in-out;
+      }
+      
+      .edu-card:hover {
+        transform: scale(1.03);
+      }
+      
+      .edu-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 1s ease-in-out;
+      }
+      
+      .edu-card.flipped .edu-inner {
+        transform: rotateY(180deg);
+      }
+      
+      .edu-front, .edu-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 30px 20px;
+        border-radius: 25px;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        transition: all 0.4s ease;
+      }
+      
+      .edu-front {
+        background: linear-gradient(135deg, #1e3c72, #6f42c1);
+        color: white;
+        animation: bounceIn 0.9s ease-out;
+      }
+      
+      .edu-back {
+        background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        color: #333;
+        transform: rotateY(180deg);
+        font-weight: 500;
+        text-align: center;
+      }
+      
+      .edu-icon {
+        width: 50px;
+        height: 50px;
+        filter: brightness(0) invert(1);
+        margin-bottom: 10px;
+      }
+      
+      /* Fancy entrance animation */
+      @keyframes bounceIn {
+        0% {
+          transform: scale(0.9) rotateY(-10deg);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1) rotateY(0deg);
+          opacity: 1;
+        }
+      }
+      
+</style>        
+  
+  
+  
+  <!-- Skills Section -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <style>
+    /* General styling for the Skills Section */
+    
+    #skills {
+      background: linear-gradient(135deg, #00b4d8, #6a82fb);
+      padding: 50px 0;
+      color: #fff;
+      text-align: center;
+    }
+  
+    h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+      color: #fff;
+    }
+ .skills-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Create two equal columns */
+  gap: 40px; /* Space between the boxes */
+  justify-items: center; /* Center the boxes horizontally */
+  align-items: center; /* Center the boxes vertically */
+  margin-top: 40px; /* Add some margin to the top */
+}
+
+.skills-box {
+  width: 350px; /* Increased width to make the box wider */
+  height: 150px; /* Reduced height to make the box shorter */
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ebe22d, #ff7eb3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.6s ease, background 0.6s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.skills-box h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+    .skills-box:hover {
+      transform: scale(1.1);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(135deg, #ff7eb3, #ff758c);
+      border-radius: 20px;
+    }
+  
+    .skills-box.clicked {
+      transform: scale(1.1);
+      animation: blastEffect 0.6s forwards;
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+      background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    }
+  
+    .skills-box.clicked h3 {
+      opacity: 0;
+    }
+  
+    .skills-box.clicked::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      animation: splashEffect 0.6s forwards;
+    }
+  
+    .skills-box.clicked .skills-details {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+  
+    .skills-details {
+      opacity: 0;
+      visibility: hidden;
+      text-align: left;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      color: #333;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-transform: capitalize;
+    }
+  
+    /* Animations */
+    @keyframes blastEffect {
+      0% {
+        transform: scale(1.1);
+      }
+      50% {
+        transform: scale(1.3);
+      }
+      100% {
+        transform: scale(1.1);
+      }
+    }
+  
+    @keyframes splashEffect {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    .colorful-rocket {
+        background: linear-gradient(135deg, #6eff86, #37f3bb, #4ADEDE, #42e695);
+        -webkit-background-clip: text;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 1.5em;
+        animation: pulseRocket 1.8s infinite ease-in-out;
+        margin-right: 12px;
+      }
+      
+      @keyframes pulseRocket {
+        0%, 100% {
+          transform: scale(1) rotate(-5deg);
+        }
+        50% {
+          transform: scale(1.2) rotate(5deg);
+        }
+      }
+      
+      
+  </style>
+  
+  <section id="skills">
+    <h2>
+        <i class="fas fa-rocket colorful-rocket"></i> My Skills
+      </h2>
+      
+    <div class="skills-container">
+      <div class="skills-box" id="web-dev" onclick="toggleSkills('web-dev')">
+        <h3>Web Development</h3>
+        <div class="skills-details">
+          <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Bootstrap, Tailwind CSS</li>
+            <li>Full Stack Development using MERN stack</li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="skills-box" id="data-analytics" onclick="toggleSkills('data-analytics')">
+        <h3>Data Analytics</h3>
+        <div class="skills-details">
+          <ul>
+            <li>Excel, Power BI, Microsoft Azure</li>
+            <li>Tableau, Dynamic Dashboard</li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="skills-box" id="prog-db" onclick="toggleSkills('prog-db')">
+        <h3>Programming & Databases</h3>
+        <div class="skills-details">
+          <ul>
+            <li>C, C++, Java, Python</li>
+            <li>SQL, MySQL, MongoDB</li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="skills-box" id="other-skills" onclick="toggleSkills('other-skills')">
+        <h3>Other Skills</h3>
+        <div class="skills-details">
+          <ul>
+            <li>Machine Learning & AI</li>
+            <li>Ethical Hacking, System Design</li>
+            <li>Problem Solving, Concept Development</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    function toggleSkills(skillId) {
+      const skillBox = document.getElementById(skillId);
+      skillBox.classList.toggle('clicked');
+    }
+  </script>
+  
+  
+  
+
+  <!-- Projects Section -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<section id="projects" class="project-section" data-aos="fade-up">
+  <h2 class="creative-heading"><i class="fas fa-laptop-code colorful-rocket"></i> My Projects</h2>
+
+  <div class="project-card" onclick="toggleProjectDetails(this)">
+    <div class="project-title">HEarFit AI</div>
+    <div class="project-details">
+      <h3>HearFit AI – Personalized Headphone Recommendation</h3>
+      <ul>
+        <li><strong>Deep Learning Model:</strong> Built a custom CNN using TensorFlow/Keras to classify ear shapes and predict headphone fit.</li>
+        <li><strong>Custom Dataset:</strong> Collected and labeled diverse ear images for improved generalization.</li>
+        <li><strong>ML Pipeline:</strong> Full AI flow from preprocessing to real-time predictions.</li>
+        <li><strong>Deployment:</strong> Flask/Streamlit-based web app for user uploads and live suggestions.</li>
+        <li><strong>Performance:</strong> 95%+ accuracy using transfer learning (ResNet).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+  <div class="project-card" onclick="toggleProjectDetails(this)">
+    <div class="project-title">AI-Powered Chatbot</div>
+    <div class="project-details">
+      <h3>AI-Powered Chatbot</h3>
+      <ul>
+        <li><strong>Natural Language Processing:</strong> Developed a chatbot using NLP techniques for real-time user interaction.</li>
+        <li><strong>Frameworks:</strong> Utilized Rasa and TensorFlow for model training and deployment.</li>
+        <li><strong>Integration:</strong> Integrated with web platforms for seamless user experience.</li>
+        <li><strong>Performance:</strong> Achieved 90%+ accuracy in intent recognition.</li>
+      </ul>
+    </div>
+  </div>
+
+<style>
+/* Heading Animation Styles */
+/* Heading Animation Styles */
+.project-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px; /* Ensure it has enough vertical space */
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  background: rgba(0, 0, 0, 0.15);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  color: #ffffff;
+  transition: background 0.4s ease, transform 0.4s ease;
+}
+
+.project-card:hover .project-title {
+  background: rgba(0, 0, 0, 0.25);
+  transform: scale(1.02);
+}
+
+.creative-heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #2e2e2e, #5a5a5a);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  transition: transform 0.5s ease, letter-spacing 0.5s ease;
+}
+
+.creative-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(to right, #00c9ff, #92fe9d);
+  transition: all 0.4s ease;
+  border-radius: 2px;
+  transform: translateX(-50%);
+}
+
+.creative-heading:hover {
+  transform: translateY(-5px);
+  letter-spacing: 1.5px;
+}
+
+.creative-heading:hover::after {
+  width: 100%;
+}
+
+/* Projects Section Styling */
+#projects {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #edf2fb, #d7e3fc);
+  text-align: center;
+}
+
+#projects h2 {
+  color: #2e2e2e; /* greyish black */
+}
+
+.project-card {
+  max-width: 700px;
+  background: linear-gradient(135deg, #00b4d8, #6a82fb);
+  color: #fff;
+  margin: 30px auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+}
+
+.project-title {
+  padding: 20px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.project-details {
+  display: none;
+  background: #fff;
+  color: #333;
+  padding: 20px 30px;
+  text-align: left;
+  animation: slideDown 0.4s ease forwards;
+}
+
+.project-details h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #444;
+}
+
+.project-details ul {
+  padding-left: 20px;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Animation for sliding details */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Colorful Rocket Icon */
+.colorful-rocket {
+  background: linear-gradient(135deg, #6eff86, #37f3bb, #4ADEDE, #42e695);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5em;
+  animation: pulseRocket 1.8s infinite ease-in-out;
+  margin-right: 12px;
+}
+
+@keyframes pulseRocket {
+  0%, 100% {
+    transform: scale(1) rotate(-5deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(5deg);
+  }
+}
+</style>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,   // Animation duration
+    once: true       // Trigger animation once
+  });
+  // Function to toggle the visibility of project details
+function toggleProjectDetails(card) {
+  const details = card.querySelector('.project-details');
+  details.style.display = details.style.display === 'block' ? 'none' : 'block';
+}
+</script>
+
+
+<!-- Experience Section -->
+<!-- Experience Section -->
+<section class="py-5" id="experience" style="display: flex; align-items: center; justify-content: center; min-height: 100vh;">
+  <div class="container" data-aos="fade-up">
+    <h2 class="text-center section-title" style="font-size: 3rem; background: linear-gradient(to right, #ff416c, #ff4b2b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; letter-spacing: 3px; font-weight: 900; text-align: center;">Experience</h2>
+    
+ <div class="row justify-content-center text-center" id="experience-boxes" style="display: flex; flex-direction: column; align-items: center;">
+  <div class="col-md-4 mb-4 d-flex flex-column align-items-center" style="width: 100%; max-width: 400px; height: 400px;">
+    <div class="card p-4 shadow card-hover experience-choice" onclick="showExperience(1)" style="background: linear-gradient(135deg, #00c9ff 0%, #92fe9d 100%); color: #000; border: none; height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <h4 class="fw-bold text-center">Cyber Security Intern</h4>
+    </div>
+  </div>
+  <div class="col-md-4 mb-4 d-flex flex-column align-items-center" style="width: 100%; max-width: 400px; height: 400px;">
+    <div class="card p-4 shadow card-hover experience-choice" onclick="showExperience(2)" style="background: linear-gradient(135deg, #f77062 0%, #fe5196 100%); color: #fff; border: none; height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <h4 class="fw-bold text-center">AI-ML Intern</h4>
+    </div>
+  </div>
+</div>
+
+
+    <div id="experience-details">
+      <div id="exp1" style="display: none;">
+        <div class="card p-4 border-0 shadow card-hover" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; border: none;">
+          <h4 class="fw-bold text-center">Cyber Security Analyst Intern</h4>
+          <p class="text-muted text-center">Virtual | October 2024 - December 2024 (10 Weeks) | Palo Alto Networks</p>
+          <ul>
+            <li>Assisted in Threat Intelligence & Analysis: Worked with real-world threat data to identify patterns, analyze malware behaviors, and contribute to detection strategies using Cortex XSOAR and AutoFocus tools.</li>
+            <li>Hands-on Experience with Network Security Tools: Gained practical exposure to Palo Alto firewalls (PAN-OS), including configuration, traffic filtering, and log analysis for intrusion detection and prevention.</li>
+            <li>Supported Incident Response & SOC Operations: Collaborated with the Security Operations Center (SOC) team to monitor alerts, escalate critical events, and simulate incident handling procedures.</li>
+            <li>Participated in Security Automation Projects: Contributed to building playbooks for automating repetitive security tasks using Python and Palo Alto's automation frameworks.</li>
+          </ul>
+          <button class="btn btn-outline-primary mt-3" onclick="resetExperience()">Back</button>
+        </div>
+      </div>
+
+      <div id="exp2" style="display: none;">
+        <div class="card p-4 border-0 shadow card-hover" style="background: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%); color: #fff; border: none;">
+          <h4 class="fw-bold text-center">AI-ML Intern</h4>
+          <p class="text-muted text-center">Virtual | January 2025 - March 2025 (10 Weeks) | Google</p>
+          <ul>
+            <li>Developed and Trained ML Models: Built supervised and unsupervised learning models using TensorFlow and scikit-learn for tasks such as image classification, natural language processing, and predictive analytics.</li>
+            <li>Optimized Model Performance: Applied hyperparameter tuning, feature engineering, and data augmentation to improve model accuracy and reduce overfitting across large-scale datasets.</li>
+            <li>Worked on Real-World AI Projects: Contributed to ongoing Google Research initiatives by integrating ML solutions into scalable systems used for user personalization and recommendation engines.</li>
+            <li>Leveraged Google Cloud Platform (GCP): Deployed ML pipelines using Vertex AI and BigQuery, and managed model versioning and A/B testing in production environments.</li>
+          </ul>
+          <button class="btn btn-outline-primary mt-3" onclick="resetExperience()">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function showExperience(id) {
+    document.getElementById("experience-boxes").style.display = "none";
+    document.getElementById("exp1").style.display = id === 1 ? "block" : "none";
+    document.getElementById("exp2").style.display = id === 2 ? "block" : "none";
+  }
+
+  function resetExperience() {
+    document.getElementById("exp1").style.display = "none";
+    document.getElementById("exp2").style.display = "none";
+    document.getElementById("experience-boxes").style.display = "flex";
+  }
+
+  window.addEventListener('click', function(e) {
+    const menu = document.getElementById('dropdown');
+    const button = document.querySelector('.dropdown-toggle');
+    if (!button.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('show-menu');
+    }
+  });
+</script>
+
+
+
+
+
+
+  <!-- Contact Section -->
+  <section class="py-5 bg-alt" id="contact">
+    <div class="container text-center" data-aos="fade-up">
+      <h2 class="section-title mb-4">Contact Me</h2>
+      
+      <p class="mb-1">
+        <i class="fas fa-envelope text-primary me-2"></i>
+        <a href="mailto:sayandeepdey1511@gmail.com">sayandeepdey1511@gmail.com</a>
+      </p>
+      <p class="mb-1">
+        <i class="fas fa-phone text-primary me-2"></i>
+        <a href="tel:+918927519727">+91 89275 19727</a>
+      </p>
+      <p class="mb-1">
+        <i class="fas fa-map-marker-alt text-primary me-2"></i>
+        Bankura, West Bengal, India
+      </p>
+  
+      <div class="d-flex justify-content-center gap-4 flex-wrap mb-4">
+        <a href="https://github.com/SanDy1511-byte" target="_blank" class="social-link">
+          <i class="fab fa-github fa-2x"></i><br>GitHub
+        </a>
+        <a href="https://www.facebook.com/share/16XWLp3hkj/" target="_blank" class="social-link">
+          <i class="fab fa-facebook fa-2x"></i><br>Facebook
+        </a>
+        <a href="https://www.instagram.com/sayan_deep2050?igsh=MTJ5ajFvbjFheGI2bA==&utm_source=ig_contact_invite" target="_blank" class="social-link">
+          <i class="fab fa-instagram fa-2x"></i><br>Instagram
+        </a>
+        <a href="https://x.com/Sayandeep15_?t=dfedT4dK0myoZAFmgPydxg&s=09" target="_blank" class="social-link">
+            <i class="fab fa-twitter fa-2x"></i><br>X
+          </a>
+          
+          
+        <a href="https://linkedin.com/in/sayandeep-dey-952020241" target="_blank" class="social-link">
+          <i class="fab fa-linkedin fa-2x"></i><br>LinkedIn
+        </a>
+      </div>
+      <style>
+      .social-link {
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+        transition: transform 0.3s ease, color 0.3s ease;
+        text-align: center;
+      }
+      
+      .social-link:hover {
+        transform: scale(1.1);
+        color: #0d6efd;
+      }
+      </style>
+      <p class="mb-4">Feel free to reach out for collaborations, projects, or just a chat!</p>
+  
+      <section class="py-5 bg-light" id="contact">
+        <div class="container text-center" data-aos="fade-up">
+          <h2 class="section-title">Let’s Connect!</h2>
+          <p class="mb-4">I would love to hear from you. Whether you have a question, suggestion, or just want to chat, feel free to reach out to me.</p>
+          <form id="contactForm" class="row g-4 justify-content-center" onsubmit="return handleSubmit(event)" data-aos="fade-up">
+            <div class="col-md-5">
+              <input type="text" id="name" class="form-control custom-input" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-5">
+              <input type="email" id="email" class="form-control custom-input" placeholder="Your Email" required>
+            </div>
+            <div class="col-md-10">
+              <textarea id="message" class="form-control custom-textarea" rows="4" placeholder="Your Message" required></textarea>
+            </div>
+            <div class="col-md-4">
+              <button type="submit" class="btn btn-primary w-100 custom-btn">Send Message</button>
+            </div>
+          </form>
+          <p class="mt-3">You can also reach me on social media:</p>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="https://github.com/SanDy1511-byte" target="_blank" class="social-link">
+              <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a href="https://www.facebook.com/share/16XWLp3hkj/" target="_blank" class="social-link">
+              <i class="fab fa-facebook fa-2x"></i>
+            </a>
+            <a href="https://www.instagram.com/sayan_deep2050" target="_blank" class="social-link">
+              <i class="fab fa-instagram fa-2x"></i>
+            </a>
+            <a href="https://x.com/Sayandeep15_?t=dfedT4dK0myoZAFmgPydxg&s=09" target="_blank" class="social-link">
+              <i class="fab fa-twitter fa-2x"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Success Notification Popup -->
+      <div id="successPopup" class="popup" style="display:none;">
+        <div class="popup-content">
+          <span class="close-btn" onclick="closePopup()">&times;</span>
+          <h3>Message Sent Successfully!</h3>
+          <p>Thank you for reaching out. I'll get back to you soon!</p>
+        </div>
+      </div>
+      
+      <!-- CSS for styling -->
+      <style>
+        .custom-input {
+          border-radius: 30px;
+          padding: 12px 20px;
+          background: linear-gradient(135deg, #007BFF, #00C6FF);
+          color: #fff;
+          border: none;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+        }
+      
+        .custom-input:focus {
+          outline: none;
+          background: linear-gradient(135deg, #00C6FF, #007BFF);
+          box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+      
+        .custom-textarea {
+          border-radius: 30px;
+          padding: 12px 20px;
+          background: linear-gradient(135deg, #007BFF, #00C6FF);
+          color: #fff;
+          border: none;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+        }
+      
+        .custom-textarea:focus {
+          outline: none;
+          background: linear-gradient(135deg, #00C6FF, #007BFF);
+          box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+      
+        .custom-btn {
+          background: linear-gradient(135deg, #28a745, #218838);
+          border-radius: 30px;
+          font-size: 1.1rem;
+          padding: 12px 24px;
+          border: none;
+          transition: all 0.3s ease;
+        }
+      
+        .custom-btn:hover {
+          background: linear-gradient(135deg, #218838, #28a745);
+          transform: translateY(-5px);
+          box-shadow: 0 4px 12px rgba(0, 123, 255, 0.5);
+        }
+      
+        .social-link {
+          color: #333;
+          transition: transform 0.3s ease;
+        }
+      
+        .social-link:hover {
+          transform: scale(1.1);
+          color: #007BFF;
+        }
+      
+        .social-link i {
+          transition: color 0.3s ease;
+        }
+      
+        .social-link:hover i {
+          color: #007BFF;
+        }
+      
+        /* Popup Style */
+        .popup {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          display: none;
+          justify-content: center;
+          align-items: center;
+        }
+      
+        .popup-content {
+          background: #fff;
+          padding: 20px;
+          border-radius: 10px;
+          text-align: center;
+          max-width: 400px;
+          width: 100%;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+      
+        .close-btn {
+          font-size: 1.5rem;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+        }
+      </style>
+      
+      <!-- JavaScript for functionality -->
+      <script>
+        function handleSubmit(event) {
+          event.preventDefault();
+      
+          // Reset the form fields
+          document.getElementById('contactForm').reset();
+      
+          // Show success popup
+          document.getElementById('successPopup').style.display = 'flex';
+        }
+      
+        function closePopup() {
+          document.getElementById('successPopup').style.display = 'none';
+        }
+      </script>
+      
+      
+    </div>
+  </section>
+  
+
+  <!-- Footer Section -->
+  <footer class="text-white text-center py-3">
+    <div class="container">
+      <p>&copy; 2025 Sayandeep Dey. Built with creativity and code.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+  </script>
+</body>
+</html>
